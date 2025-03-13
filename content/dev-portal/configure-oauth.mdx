@@ -2,4 +2,83 @@
 title: OAuth 연동 설정
 ---
 
-asdsasddas
+<img
+  src="/images/dev-portal/configure-oauth.avif"
+  alt="OAuth 연동 설정"
+  width="100%"
+/>
+
+## 기본 설정
+
+### 1. 게임 ID (API Name)
+
+- 시스템 내 고유 식별자
+- 왁타버스 게임즈에서 고정 설정
+
+<Callout type="warn">**변경 불가**</Callout>
+
+### 2. Client Secret
+
+- 보안 인증용 키
+- **현재는 미사용 중**
+
+<Callout type="warn">**외부 유출 주의 필요**</Callout>
+
+### 3. Callback URI
+
+- OAuth 인증 후 리디렉션 주소
+- 게임 요구사항에 맞게 설정
+
+### 4. 저장
+
+<Callout type="warn">**저장 전까지는 변경사항이 적용되지 않습니다.**</Callout>
+
+## 설정 관리
+
+### 변경 절차
+
+1. 수정이 필요한 설정 값 수정
+2. 저장 버튼 클릭
+
+<Callout type="warn">**저장 전까지는 변경사항이 적용되지 않습니다.**</Callout>
+
+### 보안 고려사항
+
+- Client Secret 관리
+
+```
+- 안전한 저장소에 보관
+- 코드에 직접 포함 금지
+- 정기적인 검토 권장
+```
+
+## 연동 테스트
+
+### 테스트 절차
+
+1. 설정 저장 후 게임 재시작
+2. 로그인 기능 테스트
+3. Callback 처리 확인
+
+### 문제 해결
+
+- 연동 실패 시
+  - Client ID 확인
+  - Callback URI 정확성 검증
+  - 네트워크 연결 확인
+
+<Callout>테스트는 실제 사용자 환경과 유사한 조건에서 진행하세요.</Callout>
+
+## 모범 사례
+
+### 보안
+
+- 민감한 정보 암호화
+- 안전한 통신 프로토콜 사용
+- 정기적인 보안 검토
+
+### 사용자 경험
+
+- 명확한 오류 메시지 전달
+- 간단한 인증 프로세스
+- 직관적인 UI/UX
