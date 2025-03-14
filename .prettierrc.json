@@ -1,0 +1,12 @@
+{
+  "overrides": [
+    {
+      "files": "*.mdx",
+      "options": {
+        "printWidth": 100,
+        "proseWrap": "never",
+        "htmlWhitespaceSensitivity": "strict"
+      }
+    }
+  ]
+}
