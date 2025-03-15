@@ -24,7 +24,17 @@ export default async function Page(props: {
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
         <MDX
-          components={{ ...defaultMdxComponents, APIPage: openapi.APIPage }}
+          components={{
+            ...defaultMdxComponents,
+            APIPage: (props) => {
+              try {
+                return openapi.APIPage(props);
+              } catch (e) {
+                console.error("API Page rendering error:", e);
+                return <div>API 문서를 로드하는 중 오류가 발생했습니다.</div>;
+              }
+            },
+          }}
         />
       </DocsBody>
     </DocsPage>
